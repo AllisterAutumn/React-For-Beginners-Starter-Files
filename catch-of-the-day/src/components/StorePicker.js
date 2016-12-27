@@ -14,8 +14,10 @@ goToStore (event){
   event.preventDefault();
   console.log('You changed the URL');
 //first grab the text from the box
-console.log(this.storeInput.value);
+const storeID = this.storeInput.value;
+console.log(`Going to ${storeID}`);
 // second we're going to transition from  / to /store/:storeID
+this.context.router.transitionTo(`/store/${storeID}`)
 
 }
 render (){
@@ -35,6 +37,9 @@ return (
 
 }
 
+StorePicker.contextTypes = {
+  router: React.PropTypes.object
 
+}
 
 export default StorePicker;
