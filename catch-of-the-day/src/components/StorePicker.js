@@ -2,10 +2,17 @@ import React from 'react';
 import {getFunName} from '../helpers'
 
 class StorePicker extends React.Component {
+goToStore (event){
+  event.preventDefault();
+  console.log('You changed the URL');
+//first grab the text from the box
+// second we're going to transition from  / to /store/:storeID
+
+}
 render (){
 return (
 
-            <form className="store-selector">
+            <form className="store-selector" onSubmit={this.goToStore}>
               {/*Commenting*/}
                 <h2>Please Enter A Store</h2>
                 <input type="text" required placeholder="Store Name" defaultValue={getFunName()}  />
