@@ -9,31 +9,30 @@ class App extends React.Component {
   constructor (){
     super();
     this.addFish = this.addFish.bind(this);
-     this.loadSamples = this.loadSamples(this);
+     this.loadSamples = this.loadSamples.bind(this);
     //get initial state
     this.state = {
         fishes: {},
         order: {}
-    }
+    };
 
   }
 
   addFish(fish){
-//update our state
-const fishes = {...this.state.fishes};
-//add in our new fish
-const timeStamp = Date.now();
-fishes[`fish-${timeStamp}`] = fish;
-//set state
-this.setState({fishes })
-
-
-
+     //update our state
+               const fishes = {...this.state.fishes};
+    //add in our new fish
+              const timeStamp = Date.now();
+              fishes[`fish-${timeStamp}`] = fish;
+    //set state
+              this.setState({fishes })
   }
+
+
 loadSamples(){
 
   this.setState({
-fishes: sampleFishes
+      fishes: sampleFishes
 
   })
 }
@@ -47,7 +46,7 @@ return (
                 <Header tagline="Fresh Seafood Market"/>
                 <ul className="list-of-fishes">
                   {Object.keys(this.state.fishes)
-                    .map(key => <Fish/>)
+                    .map(key => <Fish key={key} details={this.state.fishes[key]}/>)
                   }
                 </ul>
             </div>
