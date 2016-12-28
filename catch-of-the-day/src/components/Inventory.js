@@ -57,9 +57,15 @@ render (){
 
 }
 
-
-
-
 }
+
+Inventory.propTypes ={
+fishes: React.PropTypes.object.isRequired,
+updateFish: React.PropTypes.func.isRequired,
+removeFish: React.PropTypes.func.isRequired,
+addFish: React.PropTypes.func.isRequired,
+loadSamples: React.PropTypes.func.isRequired
+
+};
 
 export default Inventory;

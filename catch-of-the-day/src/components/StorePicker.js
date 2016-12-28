@@ -42,4 +42,5 @@ StorePicker.contextTypes = {
 
 }
 
+
 export default StorePicker;
