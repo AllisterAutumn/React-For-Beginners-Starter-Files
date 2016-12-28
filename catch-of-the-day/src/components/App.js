@@ -13,6 +13,7 @@ class App extends React.Component {
      this.loadSamples = this.loadSamples.bind(this);
       this.addToOrder = this.addToOrder.bind(this);
       this.updateFish = this.updateFish.bind(this);
+      this.removeFish = this.removeFish.bind(this);
 
 
     //get initial state
@@ -76,6 +77,13 @@ localStorage.setItem(`order-${this.props.params.storeId}`,
 
   }
 
+  removeFish(key){
+    const fishes = {...this.state.fishes };
+    fishes[key] = null;
+    this.setState({fishes});
+
+  }
+
 loadSamples(){
 
   this.setState({
@@ -112,7 +120,8 @@ return (
                 </ul>
             </div>
           <Order fishes={this.state.fishes} order={this.state.order}  params={this.props.params} />
-        <Inventory addFish={this.addFish} loadSamples={this.loadSamples}  fishes={this.state.fishes} updateFish={this.updateFish}/>
+        <Inventory addFish={this.addFish} loadSamples={this.loadSamples}  fishes={this.state.fishes} updateFish={this.updateFish}
+         removeFish={this.removeFish} />
         </div>
 
 
