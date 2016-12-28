@@ -14,10 +14,10 @@ goToStore (event){
   event.preventDefault();
   console.log('You changed the URL');
 //first grab the text from the box
-const storeID = this.storeInput.value;
-console.log(`Going to ${storeID}`);
+const storeId = this.storeInput.value;
+console.log(`Going to ${storeId}`);
 // second we're going to transition from  / to /store/:storeID
-this.context.router.transitionTo(`/store/${storeID}`)
+this.context.router.transitionTo(`/store/${storeId}`)
 
 }
 render (){
